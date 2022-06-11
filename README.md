@@ -1,6 +1,6 @@
 # Pewlett Hackard Analysis
 ## Purpose of the Analysis
-The goal of this project is to analyze a large amount of employee data for a company with more than 300,000 employees. Pewlett Hackard is reviewing its workforce metrics, namely retirement, and needs help processing data that will help us understand who may be eligible for retirement and to participate in the mentorship program.
+The goal of this project is to analyze a large amount of employee data for a company with more than 300,000 employees and to help Pewlett-Hackard face the "silver tsunami", which means that large number of employees are reaching retirement age. Pewlett Hackard is reviewing its workforce metrics, namely retirement, and needs help processing data that will help us understand who may be eligible for retirement and to participate in the mentorship program.
 ## Results
 Following are results of our analysis:
 
@@ -25,3 +25,22 @@ Following are results of our analysis:
 
 ## Summary
 
+- How many roles will need to be filled as the "silver tsunami" begins to make an impact?
+
+According to the analysis 72,458 roles need to be filled before retirement process.  The code below can be used to calculate the total number of employees that are about to retire.
+
+select sum (count)
+
+from retiring_titles
+
+- Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
+
+The number of competent employees who could be mentored is much smaller, just 1,549 personnel, implying that there will be enough qualified retirement-ready employees who could mentor the next generation. Following is the query to pull a table.
+
+select count (title), title
+
+from mentorship_eligibility
+
+group by title
+
+order by count desc;
