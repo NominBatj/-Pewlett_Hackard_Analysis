@@ -29,18 +29,18 @@ Following are results of our analysis:
 
 According to the analysis 72,458 roles need to be filled before retirement process.  The code below can be used to calculate the total number of employees that are about to retire.
 
+```
 select sum (count)
-
 from retiring_titles
+```
 
 - Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
 The number of competent employees who could be mentored is much smaller, just 1,549 personnel, implying that there will be enough qualified retirement-ready employees who could mentor the next generation. Following is the query to pull a table.
 
+```
 select count (title), title
-
 from mentorship_eligibility
-
 group by title
-
 order by count desc;
+```
